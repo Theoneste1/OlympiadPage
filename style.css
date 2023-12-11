@@ -928,7 +928,7 @@ body {
 .preview-2 .nivoSlider .nivo-directionNav a.nivo-prevNav, .preview-2 .nivoSlider .nivo-directionNav a.nivo-nextNav {
     font-size: 0;
 }
-.text-content .title1{
+.text-content .title1,.sub-title{
     background-color: #5A6271;
     width: 100%;
     opacity: 0.9;
@@ -3052,4 +3052,10 @@ color: white;
 }
 .teachers-past .goal{
     color: hsl(30, 100%, 50%); 
+}
+
+.text-content p{
+ font-size: 20px;
+ padding: 10px;
+ padding-bottom: 20px;
 }
