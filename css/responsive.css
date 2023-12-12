@@ -266,7 +266,7 @@
     .logo {padding: 46px 0 28px; text-align: center;}
     .about-area {background: #2D3E50; margin-top: 80px;}
     .about-container {margin-left: 0;}
-    .single-latest-text {padding: 30px 17px;}
+    .single-latest-text {padding: 5px 5px;}
     .section-title-wrapper {margin-bottom: 60px;}
     .section-title h3 {font-size: 25px;}
     .course-area .section-title-wrapper {margin-bottom: 80px;}
@@ -281,8 +281,15 @@
     .button-large.button-default {margin-top: 5px;}
     .fun-factor-area {padding: 60px 0 20px;}
     .single-fun-factor {margin-bottom: 45px;}
-    .single-latest-image {float: none; text-align: center;}
-    .single-latest-image a, .single-latest-image img {width: 100%;}
+    .single-latest-image {
+        float: none; 
+        text-align: center;
+        width: 100%;
+    }
+    .single-latest-image a, .single-latest-image img {
+        width: 100%;
+    }
+    
     .latest-area .col-md-6:last-child .single-latest-item:last-child, .product-area .col-md-3:last-child .single-product-item:last-child {
         margin: 0;
     }
@@ -350,6 +357,7 @@
         padding-top: 10px;
         width: 65px;
     }
+    /* end of my codes */
     .event-details-content .single-event-image span {font-size: 25px;}
     .event-details-content .comments {padding: 10px 0 35px;}
     .header-two .header-top-right {float: none; text-align: center;}
