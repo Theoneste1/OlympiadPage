@@ -388,7 +388,9 @@ body {
     background: #2d3e50 none repeat scroll 0 0;
     color: #ffffff;
     font-size: 13px;
-    position: relative
+    position: relative;
+    color: red;
+   
 }
 .header-top:before, .about-area:before, .newsletter-area:before {
     content: "";
@@ -2578,7 +2580,7 @@ span.c-text {display: inline-block;}
     overflow: hidden;
     position: relative;
 }
-.video-area {background: url("img/event/IMO4.jpg") no-repeat fixed top center / cover }
+.video-area {background: url("img/garelly/33.jpg") no-repeat fixed top center / cover }
 .fixed-bg-1 {background: url("img/slider/1.jpg") no-repeat fixed top center / cover }
 .fixed-bg-2 {background: url("img/slider/2.jpg") no-repeat fixed top center / cover }
 .backgrount-area {position: relative}
