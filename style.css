@@ -389,7 +389,6 @@ body {
     color: #ffffff;
     font-size: 13px;
     position: relative;
-    color: red;
    
 }
 .header-top:before, .about-area:before, .newsletter-area:before {
@@ -948,6 +947,7 @@ body {
 .text-content .title1,.sub-title{
     background-color: #5A6271;
     width: 100%;
+    font-size: 38px;
     opacity: 0.9;
 
 }
