@@ -3082,7 +3082,7 @@ color: white;
 }
 
 
-  a:link {
+/*   a:link {
     color: green;
     background-color: transparent;
     text-decoration: none;
@@ -3098,5 +3098,5 @@ color: white;
   a:active {
     color: yellow;
     background-color: transparent;
-    text-decoration: underline;
-  }
+    text-decoration: underline; */
+/*   } */
