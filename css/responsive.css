@@ -520,4 +520,31 @@
     .testimonial__author-name {
         font-size: 20px;
     }
+
+    th{
+        background-color: green;
+        color: white;
+        
+      text-align: left;
+      background-color: #04AA6D;
+    }
+    table, th, td {
+        border: 1px solid;
+        font-size: 9px;
+      }
+
+}
+
+@media (min-width: 280px) and (max-width: 653px) {
+    th{
+        background-color: green;
+        color: white;
+      text-align: left;
+      background-color: #04AA6D;
+    }
+    table, th, td {
+        border: 1px solid;
+        font-size: 6px;
+      }
+
 }

@@ -5,7 +5,7 @@ let SHEET_RANGE = 'A1:G27000'
 let FULL_URL = ('https://docs.google.com/spreadsheets/d/'+ SHEET_ID +'/gviz/tq?sheet='+SHEET_TITLE +'&range='+SHEET_RANGE);
 
 
-let length =26700;
+let length;
 let table
 let data
 let countList = new Array()
@@ -49,11 +49,11 @@ fetch(FULL_URL)
 
         //Add the header cells.
         var headerCell = document.createElement("TH");
-        headerCell.innerHTML = "SNO";
+        headerCell.innerHTML = "N";
         row.appendChild(headerCell);
 
         var headerCell = document.createElement("TH");
-        headerCell.innerHTML = "STUDENT NAME";
+        headerCell.innerHTML = "NAME STUDENT NAME";
         row.appendChild(headerCell);
 
         headerCell = document.createElement("TH");
@@ -142,8 +142,7 @@ function getCountOfPages() {
     }
 
      //function for creating how to move between the pages
-     document.getElementById("dvCustomersGrid").innerHTML = ""; 
-     function loadMyPaginationList() {  
+     function loadMyPaginationList() { 
         document.getElementById("dvCustomersGrid").innerHTML = "";     
         createPageList(currentStartingPoint, currentEndingPoing);
         addPageList = countList.slice(currentStartingPoint, currentEndingPoing);
@@ -151,17 +150,56 @@ function getCountOfPages() {
         validatePageCount();
         }
 
+        //check how many students
+         function countOfstudents(){
+            countNumber=0
+            for(j=0; j<length; j++){
+
+                let compare =data.table.rows[j].c[6].v
+                
+                if(compare == getCode()){
+                    console.log("The following data from excel : ",data.table.rows[j].c[6].v)
+                    countNumber=countNumber+1;
+                }
+         }
+         return countNumber;
+        }
+        //button
+
+        CheckListbutton=document.getElementById("first")
+        CheckListbutton.addEventListener("click", function(){
+            if(getCode()=="" && CheckListbutton.disabled==false){
+                document.getElementById("error").innerHTML="Enter the school code!!"
+                return false
+            }
+            if(getCode()!="" && CheckListbutton.disabled==false){
+            CheckListbutton.disabled=true
+            
+            }
+        })
     
+   // get the number of the students
+
+//    function getallStudents(School_code){
+//     School_code =document.getElementById('code').innerHTML;
+    
+//    }
+
     //function for adding numbers to each page
     function createPageList(start=0, end) {
-        console.log(getCode())
         
-        
+        if(countOfstudents()==0){
+            document.getElementById("error").innerHTML="We do not have this code!!"
+                // return false 
+        }
+        else{
         // document.getElementById("dvCustomersGrid").innerHTML = "";
         initialStudent=0;
-        for (i = 0; i<1000; i++) {
+        let tatal =countOfstudents()
+        console.log("This is the cound=t number of the students", tatal);
+        for (i = 0; i<length; i++) {
                 //Add the data row.
-                var row = table.insertRow(-1);
+               
                 // var row = document.createElement("tr");
               
                 let compare =data.table.rows[i].c[6].v
@@ -176,67 +214,54 @@ function getCountOfPages() {
                 // Add the data cells.
                 // var cell = row.insertCell(-1);
                 datas=initialStudent.toString()
-                // cell.innerHTML = datas;
-    
-                // cell = row.insertCell(-1);
-                // cell.innerHTML = data.table.rows[i].c[1].v;
-    
-                // cell = row.insertCell(-1);
-                // cell.innerHTML = data.table.rows[i].c[2].v;
 
-                // cell = row.insertCell(-1);
-                // cell.innerHTML = data.table.rows[i].c[3].v;
+                var row = table.insertRow(-1);
+                var headerCell = document.createElement("td");
+                headerCell.innerHTML = datas
+                row.appendChild(headerCell);
 
-                // cell = row.insertCell(-1);
-                // cell.innerHTML = data.table.rows[i].c[4].v;
+                var headerCell = document.createElement("td");
+                headerCell.innerHTML = data.table.rows[i].c[1].v;
+                row.appendChild(headerCell);
 
-                // cell = row.insertCell(-1);
-                // cell.innerHTML = data.table.rows[i].c[5].v;
+                headerCell = document.createElement("td");
+                headerCell.innerHTML = data.table.rows[i].c[2].v;
+                row.appendChild(headerCell);
 
-        
-        var headerCell = document.createElement("td");
-        headerCell.innerHTML = datas
-        row.appendChild(headerCell);
+                headerCell = document.createElement("td");
+                headerCell.innerHTML = data.table.rows[i].c[3].v;
+                row.appendChild(headerCell);
 
-        var headerCell = document.createElement("td");
-        headerCell.innerHTML = data.table.rows[i].c[1].v;
-        row.appendChild(headerCell);
+                headerCell = document.createElement("td");
+                // headerCell.innerHTML = data.table.rows[i].c[4].v;
+                headerCell.innerHTML = 'Marking';
+                row.appendChild(headerCell);
 
-        headerCell = document.createElement("td");
-        headerCell.innerHTML = data.table.rows[i].c[2].v;
-        row.appendChild(headerCell);
+                headerCell = document.createElement("td");
+                // headerCell.innerHTML = data.table.rows[i].c[5].v;
+                headerCell.innerHTML = 'Pending';
+                row.appendChild(headerCell);
+                        }
 
-        headerCell = document.createElement("td");
-        headerCell.innerHTML = data.table.rows[i].c[3].v;
-        row.appendChild(headerCell);
-
-        headerCell = document.createElement("td");
-        headerCell.innerHTML = data.table.rows[i].c[4].v;
-        row.appendChild(headerCell);
-
-        headerCell = document.createElement("td");
-        headerCell.innerHTML = data.table.rows[i].c[5].v;
-        row.appendChild(headerCell);
-
-        
-
-                }
-
-            }
-            var dvTable = document.getElementById("dvCustomersGrid");
-            dvTable.innerHTML = "";
-            dvTable.appendChild(table);
+                    }
+                    var dvTable = document.getElementById("dvCustomersGrid");
+                    dvTable.innerHTML = "";
+                    dvTable.appendChild(table);
         // document.getElementById("countList").innerHTML = document.getElementById("countList").innerHTML+ addPageList[p] + "<br/>";
     
 
         }
+        // close of else
+    }
 
         function cleaning(){
             loadMyPaginationList();
+            location.reload()
             document.getElementById("dvCustomersGrid").innerHTML=" "
          }
         //function for validating real time condition like if move to last page, last page disabled etc
         function validatePageCount() {
+       
         // document.getElementById("next").disabled = presentPage == countOfPages ? true : false;
         // document.getElementById("previous").disabled = presentPage == 1 ? true : false;
         // document.getElementById("first").disabled = presentPage == 1 ? true : false;
