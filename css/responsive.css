@@ -519,32 +519,47 @@
     }
     .testimonial__author-name {
         font-size: 20px;
-    }
-
-    th{
-        background-color: green;
-        color: white;
-        
-      text-align: left;
-      background-color: #04AA6D;
-    }
-    table, th, td {
-        border: 1px solid;
-        font-size: 9px;
-      }
+    }  
 
 }
 
 @media (min-width: 280px) and (max-width: 653px) {
-    th{
+    #dvCustomersGrid th{
         background-color: green;
         color: white;
       text-align: left;
       background-color: #04AA6D;
     }
-    table, th, td {
-        border: 1px solid;
+    #dvCustomersGrid  table, th, td {
+        padding: 2px;
         font-size: 6px;
+      }
+
+}
+
+@media (min-width: 375px) and (max-width: 667px) {
+    #dvCustomersGrid th{ 
+    color: white;
+      text-align: left;
+      font-size: 12px;
+    }
+    #dvCustomersGrid  table, th, td {
+        padding: 0px;
+        font-size: 6px;
+      }
+
+}
+
+@media (min-width: 412px) and (max-width: 914px) {
+    #dvCustomersGrid th{
+        color: white;
+        font-size: 12px;
+      text-align: left;
+   
+    }
+    #dvCustomersGrid table, th, td {
+       
+        padding: 6px; 
       }
 
 }

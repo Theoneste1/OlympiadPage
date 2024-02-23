@@ -53,19 +53,19 @@ fetch(FULL_URL)
         row.appendChild(headerCell);
 
         var headerCell = document.createElement("TH");
-        headerCell.innerHTML = "NAME STUDENT NAME";
+        headerCell.innerHTML = "STUDENT NAME";
         row.appendChild(headerCell);
 
         headerCell = document.createElement("TH");
-        headerCell.innerHTML = "GENDER";
+        headerCell.innerHTML = "G";
         row.appendChild(headerCell);
 
         headerCell = document.createElement("TH");
-        headerCell.innerHTML = "LEVEL";
+        headerCell.innerHTML = "L";
         row.appendChild(headerCell);
 
         headerCell = document.createElement("TH");
-        headerCell.innerHTML = "GRADE";
+        headerCell.innerHTML = "GR";
         row.appendChild(headerCell);
 
         headerCell = document.createElement("TH");
@@ -234,12 +234,12 @@ function getCountOfPages() {
 
                 headerCell = document.createElement("td");
                 // headerCell.innerHTML = data.table.rows[i].c[4].v;
-                headerCell.innerHTML = 'Marking';
+                headerCell.innerHTML = 'xx';
                 row.appendChild(headerCell);
 
                 headerCell = document.createElement("td");
                 // headerCell.innerHTML = data.table.rows[i].c[5].v;
-                headerCell.innerHTML = 'Pending';
+                headerCell.innerHTML = '..';
                 row.appendChild(headerCell);
                         }
 
