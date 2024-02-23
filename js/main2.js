@@ -1,9 +1,11 @@
 let SHEET_ID = '1_goCAnx9eFbY_hBHQpUggbWYQKWuKZrUPWP8s8zgpIM'
 let SHEET_TITLE = 'teachers';
-let SHEET_RANGE = 'A1:G59'
+let SHEET_RANGE = 'A1:G27000'
 
 let FULL_URL = ('https://docs.google.com/spreadsheets/d/'+ SHEET_ID +'/gviz/tq?sheet='+SHEET_TITLE +'&range='+SHEET_RANGE);
-let length =58;
+
+
+let length =26700;
 let table
 let data
 let countList = new Array()
@@ -11,7 +13,7 @@ let countList = new Array()
 let firstcount=0;
 let lastpoint=length;
 let pageSize =10;
-let countPerEachPage =pageSize;
+let countPerEachPage =10;
 let presentPage =1;
 let countOfPages;
 
@@ -24,63 +26,17 @@ let previousEndingPoint;
 let nextStatingPoint;
 let nextEndingPoint;
 
-const suapingPoints=(a,b)=>{
-    let temp;
-    temp = a,
-    a=b;
-    b=a;
 
-}
 
 function getCode(){
     return document.getElementById('code').value;
-}
-
-function goFirstPage(){
-    cleaning()
-    validatePageCount()
-    presentPage =1;
-    currentStartingPoint=0;
-    currentEndingPoing =10;
-   
-    loadMyPaginationList();
-    console.log("After call of gofirst, ",currentStartingPoint, currentEndingPoing,presentPage)
-}
-
-function goNextPage(){
-    cleaning()
-    validatePageCount()
-    presentPage +=1;
-currentStartingPoint += 10;
-currentEndingPoing += 10;
-
-loadMyPaginationList();
-console.log("After call of gonext, ",currentStartingPoint, currentEndingPoing,presentPage)
-}
-
-function goPreviousPage(){
-    cleaning()
-    validatePageCount()
-    loadMyPaginationList();
-    currentStartingPoint -=10;
-    currentEndingPoing -=10;
-    presentPage -=1
-    console.log("After call of goprevious, ",currentStartingPoint, currentEndingPoing,presentPage)
-}
-function goLastPage(){
-    cleaning()
-    validatePageCount()
-    loadMyPaginationList();
-    currentStartingPoint = length-10;
-    currentEndingPoing = length;
-    presentPage = getCountOfPages( )
-    console.log("After call of last page, ",currentStartingPoint, currentEndingPoing,presentPage)
 }
 
 fetch(FULL_URL)
 .then(res => res.text())
 .then(rep => {
     data = JSON.parse(rep.substr(47).slice(0,-2)); 
+    console.log(data)
     
     length = data.table.rows.length;
     console.log("This is length ", length)
@@ -93,19 +49,27 @@ fetch(FULL_URL)
 
         //Add the header cells.
         var headerCell = document.createElement("TH");
-        headerCell.innerHTML = "teacher_number";
+        headerCell.innerHTML = "SNO";
+        row.appendChild(headerCell);
+
+        var headerCell = document.createElement("TH");
+        headerCell.innerHTML = "STUDENT NAME";
         row.appendChild(headerCell);
 
         headerCell = document.createElement("TH");
-        headerCell.innerHTML = "Beneficiary_name";
+        headerCell.innerHTML = "GENDER";
         row.appendChild(headerCell);
 
         headerCell = document.createElement("TH");
-        headerCell.innerHTML = "Bank_Account_Number";
+        headerCell.innerHTML = "LEVEL";
         row.appendChild(headerCell);
 
         headerCell = document.createElement("TH");
-        headerCell.innerHTML = "Code";
+        headerCell.innerHTML = "GRADE";
+        row.appendChild(headerCell);
+
+        headerCell = document.createElement("TH");
+        headerCell.innerHTML = "STATUS";
         row.appendChild(headerCell);
    
    
@@ -167,7 +131,7 @@ function getCountOfPages() {
         start =0;
         end = countPerEachPage;
         loadMyPaginationList();
-        console.log(start,end,presentPage)
+        document.getElementById("first").disabled;
     }
     //function for moving last page
     function getLastPage() {
@@ -189,33 +153,73 @@ function getCountOfPages() {
 
     
     //function for adding numbers to each page
-    function createPageList(start, end) {
+    function createPageList(start=0, end) {
         console.log(getCode())
         
         
         // document.getElementById("dvCustomersGrid").innerHTML = "";
-        for (i = start; i<end; i++) {
+        initialStudent=0;
+        for (i = 0; i<1000; i++) {
                 //Add the data row.
                 var row = table.insertRow(-1);
+                // var row = document.createElement("tr");
               
-                let compare =data.table.rows[i].c[5].v
+                let compare =data.table.rows[i].c[6].v
+                
 
                 code =document.getElementById('code').innerHTML
-                if(compare==getCode())
+                // console.log("The data from excel : ",data.table.rows[i].c[6].v)
+                if(compare == getCode())
                 {
-    
+                    initialStudent +=1;
+                
                 // Add the data cells.
-                var cell = row.insertCell(-1);
-                console.log("This is ", i)
-                cell.innerHTML = data.table.rows[i].c[0].v;
+                // var cell = row.insertCell(-1);
+                datas=initialStudent.toString()
+                // cell.innerHTML = datas;
     
-                cell = row.insertCell(-1);
-                cell.innerHTML = data.table.rows[i].c[1].v;
+                // cell = row.insertCell(-1);
+                // cell.innerHTML = data.table.rows[i].c[1].v;
     
-                cell = row.insertCell(-1);
-                cell.innerHTML = data.table.rows[i].c[2].v;
-                cell = row.insertCell(-1);
-                cell.innerHTML = data.table.rows[i].c[5].v;
+                // cell = row.insertCell(-1);
+                // cell.innerHTML = data.table.rows[i].c[2].v;
+
+                // cell = row.insertCell(-1);
+                // cell.innerHTML = data.table.rows[i].c[3].v;
+
+                // cell = row.insertCell(-1);
+                // cell.innerHTML = data.table.rows[i].c[4].v;
+
+                // cell = row.insertCell(-1);
+                // cell.innerHTML = data.table.rows[i].c[5].v;
+
+        
+        var headerCell = document.createElement("td");
+        headerCell.innerHTML = datas
+        row.appendChild(headerCell);
+
+        var headerCell = document.createElement("td");
+        headerCell.innerHTML = data.table.rows[i].c[1].v;
+        row.appendChild(headerCell);
+
+        headerCell = document.createElement("td");
+        headerCell.innerHTML = data.table.rows[i].c[2].v;
+        row.appendChild(headerCell);
+
+        headerCell = document.createElement("td");
+        headerCell.innerHTML = data.table.rows[i].c[3].v;
+        row.appendChild(headerCell);
+
+        headerCell = document.createElement("td");
+        headerCell.innerHTML = data.table.rows[i].c[4].v;
+        row.appendChild(headerCell);
+
+        headerCell = document.createElement("td");
+        headerCell.innerHTML = data.table.rows[i].c[5].v;
+        row.appendChild(headerCell);
+
+        
+
                 }
 
             }
@@ -228,19 +232,14 @@ function getCountOfPages() {
         }
 
         function cleaning(){
+            loadMyPaginationList();
             document.getElementById("dvCustomersGrid").innerHTML=" "
          }
         //function for validating real time condition like if move to last page, last page disabled etc
         function validatePageCount() {
-        document.getElementById("next").disabled = presentPage == countOfPages ? true : false;
-        document.getElementById("previous").disabled = presentPage == 1 ? true : false;
-        document.getElementById("first").disabled = presentPage == 1 ? true : false;
-        document.getElementById("last").disabled = presentPage == countOfPages ? true : false;
+        // document.getElementById("next").disabled = presentPage == countOfPages ? true : false;
+        // document.getElementById("previous").disabled = presentPage == 1 ? true : false;
+        // document.getElementById("first").disabled = presentPage == 1 ? true : false;
+        // document.getElementById("last").disabled = presentPage == countOfPages ? true : false;
         }
 
-
-
-
-        //get countof page
-        // getCountOfPages();
-        // prepareList()

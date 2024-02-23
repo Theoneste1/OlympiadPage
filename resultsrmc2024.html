@@ -243,9 +243,9 @@
                             <div class="col-lg-9 col-md-12 col-12">
                                 <div class="news-details-content">
                                    <div class="single-latest-item">
-                                        <img src="img/details/Arun_teaching.jpg" alt="">  
+                                        <!-- <img src="img/details/Arun_teaching.jpg" alt="">   -->
                                         <div class="single-latest-text">
-                                            <h3>ENTER THE SCHOOL CODE FOR RESULTS</h3> 
+                                            <h3>JRMC ROUND1 RESULTS</h3> 
                                             <div class="single-item-comment-view">
                                                <span><i class="zmdi zmdi-calendar-check"></i>25 Jan 2024</span>
                                                <span><i class="zmdi zmdi-eye"></i>4349</span>
@@ -256,10 +256,10 @@
                                                 <input type="text" id="code", placeholder="Enter the code here" required >
                                                 <br>
                                                 <br>
-                                                <input type="button" id="first" onclick="goFirstPage()" value="first" />
-                                                <input type="button" id="next" onclick="goNextPage()" value="next" />
-                                                <input type="button" id="previous" onclick="goPreviousPage()" value="previous" />
-                                                <input type="button" id="last" onclick="goLastPage()" value="last" />
+                                                <input type="button" id="first" onclick="getFirstPage()" value="Show Result" />
+                                                <!-- <input type="button" id="next" onclick="getNextPage()" value="next" />
+                                                <input type="button" id="previous" onclick="getPreviousPage()" value="previous" />
+                                                <input type="button" id="last" onclick="getLastPage()" value="last" /> -->
                                                 <input type="button" id="ClearTables" onclick="cleaning()" value="Clear" />
                                                
                                                 
@@ -269,120 +269,13 @@
                                             <div id="dvCustomersGrid"></div>
 
 
-                                                   
-                                            <div class="tags-and-links">
-                                                <div class="related-tag">
-                                                    <span>Tag:</span>
-                                                    <ul class="tags">
-                                                        <li><a href="#">Rwanda Olympiad,</a></li>
-                                                        <li><a href="#">Competition,</a></li>
-                                                        <li><a href="#">Mathematics camp,</a></li>
-                                                        <li><a href="#">AIMS</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="social-links">
-                                                    <span>Share:</span>
-                                                    <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-                                                    <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-                                                    <a href="#"><i class="zmdi zmdi-google-old"></i></a>
-                                                    <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-                                                </div>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                    
                                 </div>    
                             </div>
-                            <div class="col-lg-3 col-md-12 col-12">
-                                <div class="sidebar-widget">
-                                    <div class="single-sidebar-widget">
-                                        <h4 class="title">Recent Posts</h4>
-                                        <div class="recent-content">
-                                            <div class="recent-content-item">
-                                                <a href="#"><img src="img/event/7.jpg" alt=""></a>
-                                                <div class="recent-text">
-                                                    <h4><a href="#">Mathematics Summer camp</a></h4>
-                                                    <div class="single-item-comment-view">
-                                                        <span><i class="zmdi zmdi-eye"></i>70</span>
-                                                        <span><i class="zmdi zmdi-comments"></i>16</span>
-                                                    </div>
-                                                    <p>The incredible opportunities for the students to work on different Mathematics projects</p>
-                                                </div>
-                                            </div>
-                                            <div class="recent-content-item">
-                                                <a href="#"><img src="img/event/8.jpg" alt=""></a>
-                                                <div class="recent-text">
-                                                    <h4><a href="#">Olympiad Competition</a></h4>
-                                                    <div class="single-item-comment-view">
-                                                        <span><i class="zmdi zmdi-eye"></i>59</span>
-                                                        <span><i class="zmdi zmdi-comments"></i>139</span>
-                                                    </div>
-                                                    <p>Different competitions exist for selecting the PAMO and IMO team.</p>
-                                                </div>
-                                            </div>
-                                            <div class="recent-content-item">
-                                                <a href="#"><img src="img/event/9.jpg" alt=""></a>
-                                                <div class="recent-text">
-                                                    <h4><a href="#">IMO NEWS</a></h4>
-                                                    <div class="single-item-comment-view">
-                                                        <span><i class="zmdi zmdi-eye"></i>52</span>
-                                                        <span><i class="zmdi zmdi-comments"></i>65</span>
-                                                    </div>
-                                                    <p>Information regaring to IMO and how it is prepared.</p>
-                                                </div>
-                                            </div>
-                                            <div class="recent-content-item">
-                                                <a href="#"><img src="img/event/10.jpg" alt=""></a>
-                                                <div class="recent-text">
-                                                    <h4><a href="#">SELECTIONS PROCESS</a></h4>
-                                                    <div class="single-item-comment-view">
-                                                        <span><i class="zmdi zmdi-eye"></i>59</span>
-                                                        <span><i class="zmdi zmdi-comments"></i>19</span>
-                                                    </div>
-                                                    <p>The steps and all about what we do to select our students.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="single-sidebar-widget comment">
-                                        <h4 class="title">Recent Comment</h4>
-                                        <div class="recent-content">
-                                            <div class="recent-content-item">
-                                                <a href="#"><img src="img/comment/3.jpg" alt=""></a>
-                                                <div class="recent-text">
-                                                    <h4><a href="#">MR Soytan Ali</a></h4>
-                                                    <p>Competition will help the students and know their levels</p>
-                                                </div>
-                                            </div>
-                                            <div class="recent-content-item">
-                                                <a href="#"><img src="img/comment/1.jpg" alt=""></a>
-                                                <div class="recent-text">
-                                                    <h4><a href="#">MD Tokdir  Ali</a></h4>
-                                                    <p>That sounds, amazing activities for RWMO</p>
-                                                </div>
-                                            </div>
-                                            <div class="recent-content-item">
-                                                <a href="#"><img src="img/comment/3.jpg" alt=""></a>
-                                                <div class="recent-text">
-                                                    <h4><a href="#">MR Soytan Ali</a></h4>
-                                                    <p>Excellent to include all the Juniors and Seniors</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- <div class="single-sidebar-widget">
-                                        <h4 class="title">Search by Tags</h4>
-                                        <ul class="tags">
-                                            <li><a href="#">Photoshop</a></li>
-                                            <li><a href="#">Design</a></li>
-                                            <li><a href="#">Tutorial</a></li>
-                                            <li><a href="#">Courses</a></li>
-                                            <li><a href="#">Premium</a></li>
-                                            <li><a href="#">Designtuto</a></li>
-                                        </ul>
-                                    </div> -->
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

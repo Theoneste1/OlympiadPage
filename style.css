@@ -3082,28 +3082,24 @@ color: white;
 }
 
 
+
 .Grid{
     display: grid;
+    overflow-x: auto;
     grid-template-columns: 1fr 1fr;
     width: 300px;
 }
-
-
-/*   a:link {
-    color: green;
-    background-color: transparent;
-    text-decoration: none;
+th{
+    background-color: green;
+    color: white;
+    padding-top: 12px;
+    padding-left:10px ;
+    padding-right: 10px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+}
+table, th, td {
+    border: 1px solid;
   }
-  
-  
-  a:hover {
-    color: red;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  
-  a:active {
-    color: yellow;
-    background-color: transparent;
-    text-decoration: underline; */
-/*   } */
+
