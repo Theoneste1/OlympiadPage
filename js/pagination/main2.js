@@ -1,6 +1,6 @@
 let SHEET_ID = '1_goCAnx9eFbY_hBHQpUggbWYQKWuKZrUPWP8s8zgpIM'
 let SHEET_TITLE = 'teachers';
-let SHEET_RANGE = 'A1:G27000'
+let SHEET_RANGE = 'A1:K29604'
 
 let FULL_URL = ('https://docs.google.com/spreadsheets/d/'+ SHEET_ID +'/gviz/tq?sheet='+SHEET_TITLE +'&range='+SHEET_RANGE);
 
@@ -101,50 +101,32 @@ function getCountOfPages() {
 // }
     //function for moving to next page
     const getNextPage=()=> {
-    // presentPage += 1;
-    if( end<=length){
-        start = countPerEachPage + start;
-        end = end +countPerEachPage
-    }
-    
-    console.log('The pages start and end')
-   
+    presentPage += 1;
     loadMyPaginationList();
-    console.log(start,end, presentPage)
+   
     }
     //function for moving previous page
     function getPreviousPage() {
-    // presentPage -= 1;
-    if(start>=countPerEachPage)
-    {
-        start= start -countPerEachPage;
-        end = end -countPerEachPage;
-    }
-     console.log('The pages start and end')
-    
+    presentPage -= 1;
     loadMyPaginationList();
-    console.log(start,end,presentPage)
+   
     }
     //function for moving to first page
     function getFirstPage() {
-        // presentPage = 0;
-        start =0;
-        end = countPerEachPage;
+        presentPage = 0;
         loadMyPaginationList();
         document.getElementById("first").disabled;
     }
     //function for moving last page
     function getLastPage() {
-    start = length - countPerEachPage;
-    end = countPerEachPage;
-    // presentPage = countOfPages;
+    presentPage = countOfPages;
     loadMyPaginationList();
     }
 
      //function for creating how to move between the pages
      function loadMyPaginationList() { 
         document.getElementById("dvCustomersGrid").innerHTML = "";     
-        createPageList(currentStartingPoint, currentEndingPoing);
+        createPageList();
         addPageList = countList.slice(currentStartingPoint, currentEndingPoing);
        
         validatePageCount();
@@ -153,18 +135,24 @@ function getCountOfPages() {
         //check how many students
          function countOfstudents(){
             countNumber=0
+            
             for(j=0; j<length; j++){
-
+                console.log(data.table.rows[j].c[6].v)
                 let compare =data.table.rows[j].c[6].v
                 
+                
                 if(compare == getCode()){
+        
                     console.log("The following data from excel : ",data.table.rows[j].c[6].v)
                     countNumber=countNumber+1;
+                    console.log("This is the number", countNumber)
                 }
          }
          return countNumber;
         }
         //button
+
+
 
         CheckListbutton=document.getElementById("first")
         CheckListbutton.addEventListener("click", function(){
@@ -180,13 +168,8 @@ function getCountOfPages() {
     
    // get the number of the students
 
-//    function getallStudents(School_code){
-//     School_code =document.getElementById('code').innerHTML;
-    
-//    }
-
     //function for adding numbers to each page
-    function createPageList(start=0, end) {
+    function createPageList() {
         
         if(countOfstudents()==0){
             document.getElementById("error").innerHTML="We do not have this code!!"
@@ -247,12 +230,29 @@ function getCountOfPages() {
                     var dvTable = document.getElementById("dvCustomersGrid");
                     dvTable.innerHTML = "";
                     dvTable.appendChild(table);
+                    findTrs()
         // document.getElementById("countList").innerHTML = document.getElementById("countList").innerHTML+ addPageList[p] + "<br/>";
     
 
         }
         // close of else
+
+        
     }
+
+    function findTrs(){
+
+    let trs=document.querySelectorAll("tr");
+    trs =Array.from(trs);
+
+    console.log("These are trs",trs);
+    }
+
+    // getting the size of table.
+
+
+
+
 
         function cleaning(){
             loadMyPaginationList();
