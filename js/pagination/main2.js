@@ -137,15 +137,15 @@ function getCountOfPages() {
             countNumber=0
             
             for(j=0; j<length; j++){
-                console.log(data.table.rows[j].c[6].v)
+                // console.log(data.table.rows[j].c[6].v)
                 let compare =data.table.rows[j].c[6].v
                 
                 
                 if(compare == getCode()){
         
-                    console.log("The following data from excel : ",data.table.rows[j].c[6].v)
+                    // console.log("The following data from excel : ",data.table.rows[j].c[6].v)
                     countNumber=countNumber+1;
-                    console.log("This is the number", countNumber)
+                    // console.log("This is the number", countNumber)
                 }
          }
          return countNumber;
@@ -179,7 +179,7 @@ function getCountOfPages() {
         // document.getElementById("dvCustomersGrid").innerHTML = "";
         initialStudent=0;
         let tatal =countOfstudents()
-        console.log("This is the cound=t number of the students", tatal);
+        // console.log("This is the cound=t number of the students", tatal);
         for (i = 0; i<length; i++) {
                 //Add the data row.
                
@@ -245,7 +245,7 @@ function getCountOfPages() {
     let trs=document.querySelectorAll("tr");
     trs =Array.from(trs);
 
-    console.log("These are trs",trs);
+    // console.log("These are trs",trs);
     }
 
     // getting the size of table.
