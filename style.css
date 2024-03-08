@@ -1505,6 +1505,16 @@ border-radius: 6px;
     
     border-bottom: 2px solid rgba(34, 30, 31, 0.3);
     border-color: #34495E;
+    /* height: 450px; */
+    margin-bottom: 5px;
+}
+.SelectionTest{
+
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(34, 30, 31, 0.3);
+    
+    border-bottom: 2px solid rgba(34, 30, 31, 0.3);
+    border-color: #34495E;
     height: 450px;
     margin-bottom: 5px;
 }
