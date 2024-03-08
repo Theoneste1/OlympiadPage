@@ -1072,6 +1072,7 @@ body {
     text-align: center;
     top: -35px;
 }
+
 .overlay-effect a {position: relative}
 .overlay-effect a:before {
   background: rgba(45, 62, 80, 0.2) none repeat scroll 0 0;
@@ -1089,6 +1090,7 @@ body {
 .single-item:hover .overlay-effect a:before {opacity: 1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; filter: alpha(opacity=100);}
 .single-item {
     background: #f6f6f6 none repeat scroll 0 0;
+   
     border-bottom: 3px solid #86bc42;
     border-radius: 6px;
     padding: 0 35px;
@@ -1115,6 +1117,14 @@ body {
     overflow: hidden;
     padding-top: 21px;
 }
+
+.single-item{
+    height: 500px;
+    /* background-color: red; */
+    /* overflow: overlay; */
+    border-radius: 5px;
+}
+
 .single-item-text-info {margin-bottom: 18px; padding-top: 5px;}
 .single-item-comment-view span {
     color: #696969;
@@ -1474,10 +1484,12 @@ border-radius: 6px;
 	font-size: 24px;
 }
 .single-event-text {
-    background: #f6f6f6 none repeat scroll 0 0;
-    border-radius: 6px;
-    border-bottom: 2px solid #86bc42;
-    padding: 29px 34px 35px;
+    /* background: #f6f6f6 none repeat scroll 0 0;
+    border-radius: 20px; */
+    /* border-bottom: 2px solid #86bc42; */
+    /* background-color: yellow; */
+    /* padding: 29px 34px 35px; */
+    padding: 30px 10px 10px;
 }
 .single-event-item .single-item-comment-view {margin-bottom: 12px;}
 .single-event-item .single-item-comment-view span {margin-right: 12px;}
@@ -1490,6 +1502,11 @@ border-radius: 6px;
 .single-event-item {
     border-radius: 6px;
     box-shadow: 0 0 8px rgba(34, 30, 31, 0.3);
+    
+    border-bottom: 2px solid rgba(34, 30, 31, 0.3);
+    border-color: #34495E;
+    height: 450px;
+    margin-bottom: 5px;
 }
 /*----------------------------------------*/
 /*  11. Newsletter Area
