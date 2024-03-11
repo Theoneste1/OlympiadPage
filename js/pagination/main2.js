@@ -1,5 +1,6 @@
 let SHEET_ID = '1_goCAnx9eFbY_hBHQpUggbWYQKWuKZrUPWP8s8zgpIM'
-let SHEET_TITLE = 'teachers';
+// let SHEET_TITLE = 'teachers';
+let SHEET_TITLE = 'JRound2';
 let SHEET_RANGE = 'A1:K29604'
 
 let FULL_URL = ('https://docs.google.com/spreadsheets/d/'+ SHEET_ID +'/gviz/tq?sheet='+SHEET_TITLE +'&range='+SHEET_RANGE);
@@ -177,6 +178,9 @@ function getCountOfPages() {
         }
         else{
         // document.getElementById("dvCustomersGrid").innerHTML = "";
+
+        let index;
+       
         initialStudent=0;
         let tatal =countOfstudents()
         // console.log("This is the cound=t number of the students", tatal);
@@ -193,7 +197,8 @@ function getCountOfPages() {
                 if(compare == getCode())
                 {
                     initialStudent +=1;
-                
+                    // keep the value for making the list
+                    index =i 
                 // Add the data cells.
                 // var cell = row.insertCell(-1);
                 datas=initialStudent.toString()
@@ -216,17 +221,31 @@ function getCountOfPages() {
                 row.appendChild(headerCell);
 
                 headerCell = document.createElement("td");
-                headerCell.innerHTML = data.table.rows[i].c[4].v;
-                // headerCell.innerHTML = 'xx';
+                // headerCell.innerHTML = data.table.rows[i].c[4].v;
+                headerCell.innerHTML = 'xx';
                 row.appendChild(headerCell);
 
                 headerCell = document.createElement("td");
-                headerCell.innerHTML = data.table.rows[i].c[5].v;
-                // headerCell.innerHTML = '..';
+                // headerCell.innerHTML = data.table.rows[i].c[5].v;
+                headerCell.innerHTML = '..';
                 row.appendChild(headerCell);
                         }
 
                     }
+                   let style= document.getElementById("school");
+                   style.classList.remove("remove");
+                    document.getElementById("school").style.color="black";
+                    
+
+                
+
+                    // school informations
+                    document.getElementById("schoolname").innerHTML=data.table.rows[index].c[10].v;
+                    document.getElementById("teachername").innerHTML=data.table.rows[index].c[9].v;
+                    document.getElementById("districtname").innerHTML=data.table.rows[index].c[7].v;
+                    document.getElementById("sectorname").innerHTML=data.table.rows[index].c[8].v;
+                    document.getElementById("snumber").innerHTML=initialStudent
+
                     var dvTable = document.getElementById("dvCustomersGrid");
                     dvTable.innerHTML = "";
                     dvTable.appendChild(table);

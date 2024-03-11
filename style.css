@@ -3235,3 +3235,7 @@ color: white;
   .resultsClass p{
     text-align: center;
   }
+
+  .remove{
+    display: none;
+  }
