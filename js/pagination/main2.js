@@ -173,7 +173,7 @@ function getCountOfPages() {
     function createPageList() {
         
         if(countOfstudents()==0){
-            document.getElementById("error").innerHTML="We do not have this code!!"
+            document.getElementById("error").innerHTML="Please use the code used in telegram bot!!"
                 // return false 
         }
         else{
