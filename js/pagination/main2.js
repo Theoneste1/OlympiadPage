@@ -221,13 +221,13 @@ function getCountOfPages() {
                 row.appendChild(headerCell);
 
                 headerCell = document.createElement("td");
-                // headerCell.innerHTML = data.table.rows[i].c[4].v;
-                headerCell.innerHTML = 'xx';
+                headerCell.innerHTML = data.table.rows[i].c[4].v;
+                // headerCell.innerHTML = 'xx';
                 row.appendChild(headerCell);
 
                 headerCell = document.createElement("td");
-                // headerCell.innerHTML = data.table.rows[i].c[5].v;
-                headerCell.innerHTML = '..';
+                headerCell.innerHTML = data.table.rows[i].c[5].v;
+                // headerCell.innerHTML = '..';
                 row.appendChild(headerCell);
                         }
 
